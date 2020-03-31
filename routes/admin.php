@@ -79,8 +79,9 @@ Route::group(['middleware' => ['admin.authenticate','check.access']], function (
             Route::get('auth/index', 'UserAuthController@index')->name('userAuth.lists');
             Route::get('auth/edit', 'UserAuthController@edit')->name('userAuth.edit');
             Route::post('auth/update', 'UserAuthController@update')->name('userAuth.update');
-            /*<------------------banner--------------------->*/
-            Route::get('banner/index', 'BannerController@index')->name('banner.lists');
+            /*<------------------运营中心--------------------->*/
+            Route::get('banner/index', 'BannerController@index')->name('banner.lists');//banner
+            Route::get('qrcode/index', 'QrCodeController@index')->name('qrcode.lists');//生成二维码
 
         });
 });

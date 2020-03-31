@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         // 自定义
         \App\Providers\CacheServiceProvider::class,
         \App\Providers\MailServiceProvider::class,
@@ -234,6 +235,7 @@ return [
         'JWTFactory'   => 'Tymon\JWTAuth\Facades\JWTFactory',
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
         // 自定义
         'CacheService'  => \App\Facades\CacheServiceFacade::class,

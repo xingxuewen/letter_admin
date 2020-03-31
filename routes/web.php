@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+//API
+Route::get('/api', function ()  {
+    return \App\Helpers\RestResponseFactory::ok(null, 'LoveLetter API');
+});
 
 Auth::routes();
 

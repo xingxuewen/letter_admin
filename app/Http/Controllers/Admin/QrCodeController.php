@@ -8,8 +8,8 @@ use App\Helpers\RestResponseFactory;
 use App\Helpers\RestUtils;
 use App\Services\CacheService;
 use App\Models\CrmAdminUserModel;
-use App\Services\MailService;
-use App\Services\UserService;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Services\QrCodeService;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -29,17 +29,11 @@ class QrCodeController extends BaseController
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after auth.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/admin/index';
 
     /**
      * @var UserService
      */
-    private $userService;
+    private $QrCodeService;
 
     const LOG_FILE = 'crm';
 
@@ -49,10 +43,9 @@ class QrCodeController extends BaseController
      * @param UserService $userService
      * @return void
      */
-    public function __construct(UserService $userService)
+    public function __construct(QrCodeService $QrCodeService)
     {
-        $this->middleware('guest:admin')->except('logout');
-        $this->userService = $userService;
+        $this->QrCodeService = $QrCodeService;
     }
 
     /**
@@ -60,8 +53,14 @@ class QrCodeController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function showLoginForm()
+    public function index(Request $request)
     {
+        $value = 'https://www.baidu.com'; //二维码内容
+        //生成二维码图片
+       $qr = QrCode::size(200)->generate(date('Y-m-d H:i:s'),public_path('qrcode').'qr1.png');
+        //        (new QrCode())->format('png')->png($value, 'qrcode.png', $errorCorrectionLevel, $matrixPointSize, 2);
+        echo $qr;
+//        return $res;
         return view('admin.qrcode.index');
     }
 

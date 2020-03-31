@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/dingo/api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/league/flysystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/simplesoftwareio/simple-qrcode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/console" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/debug" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/http-kernel" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" vcs="Git" />
+  </component>
+</project>
